@@ -33,33 +33,6 @@ client.on('ready', () => {
  
 client.login(process.env.BOT_TOKEN);
 
-```JS 
-client.on('message', message => {
-      if(message.content.startsWith ("p-marry")) {
-      if(!message.channel.guild) return message.reply('**This command only for servers**')
-      var proposed = message.mentions.members.first()
-     
-      if(!message.mentions.members.first()) return message.reply(' +2D3eDw **منشن من يلي تبي تتزوجها**').catch(console.error);
-      if(message.mentions.users.size > 1) return message.reply(' +2D3eMw **You can only marry one girl**').catch(console.error);
-       if(proposed === message.author) return message.reply(`**.**`);
-        if(proposed === client.user) return message.reply(`** هل تقبل الزواد منها؟**`);
-              message.channel.send(`**${proposed} 
- Do you accept ${message.author} marry request
- You have 30 sec
- Write موافق or ارفض**`)
-
-const filter = m => m.content.startsWith("موافق");
-message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-.then(collected =>{ 
-    message.channel.send(` **${message.author} +Bkg ${proposed} Congratolations you are now married don't miss honey month! +2D3ccA +2DzfiQ** `);
-})
-
-   const filte = m => m.content.startsWith("no");
-message.channel.awaitMessages(filte, { max: 1, time: 30000, errors: ['time'] })
-.then(collected =>{ 
-   message.channel.send(`  **${message.author} he don't accept so the marry ended +2D3eFA** `);
-})
-
   }
 });
 const prefix = "-" // البرفكس
